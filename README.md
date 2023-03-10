@@ -12,3 +12,4 @@ Kort beskrivelse av applikasjon (5-10 setninger):
 Jobbet videre på oblig 1. Stylet med Bootstrap og CSS.
 Lagt inn noen ekstra features som en advarsel når man sletter array,
 og bekreftelse på at billett er registrert.
+I etterkant lagt inn eksempel på FAQ og Kinoprogram med bootstrap. 
