@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinoprogram</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="Style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!--NAVBAR-->
+<nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand h1 m-0 fw-bold" href="index.html">Circle Cinema</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Circle Cinema</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Forsiden</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Program.html">Kinoprogram</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="FAQ.html">Ofte Stilte Spørsmål</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lokasjoner
+            </a>
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item" href="#">Oslo</a></li>
+              <li><a class="dropdown-item" href="#">Bergen</a></li>
+              <li><a class="dropdown-item" href="#">Trondheim</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Søk etter filmer" aria-label="Søk">
+          <button class="btn navbtn" type="submit">Søk</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Div som sentrerer med bootstrap -->
+<div class="container d-flex justify-content-center align-items-center flex-column vw-100 mt-5 pt-5 mb-5 pb-5">
+    <h3 class="display-1 mt-5 fw-bold">Kinoprogram</h3>
+  <p class="fs-4 fw-light text-muted">Finn din favoritt!</p>
+<!--
+    <div class="container text-center flex flex-row justify-content-space-around">
+-->
+      <div class="row flex justify-content-center w-100">
+        <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+          <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+          <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+        </div>
+        <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+          <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+          <span class="text text-center text-fluid" style="font-size: 2vw">Iron Man 2</span>
+        </div>
+        <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+          <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+          <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+        </div>
+        <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+          <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+          <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+        </div>
+        <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+          <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+          <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+        </div>
+      </div>
+
+    <div class="row flex justify-content-center w-100">
+      <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+        <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+        <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+      </div>
+      <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+        <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+        <span class="text text-center text-fluid" style="font-size: 2vw">Iron Man 2</span>
+      </div>
+      <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+        <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+        <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+      </div>
+      <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+        <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+        <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+      </div>
+      <div class="col sm-3 d-flex justify-content-between align-items-center flex-column g-5">
+        <img class="rounded img-fluid" src="https://www.nfkino.no/sites/nfkino.no/files/movie-posters/BVI20200551_83207.jpg" alt="avatar"></img>
+        <span class="text text-center text-fluid" style="font-size: 2vw">Avatar</span>
+      </div>
+    </div>
+</div>
+
+
+<!-- Footer fra https://getbootstrap.com/docs/5.2/examples/footers/ -->
+<footer class="footer row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 px-0 mx-0 border-top mt-5">
+  <div class="col mb-3">
+    <a href="index.html" class="d-flex align-items-center mb-3  text-decoration-none">
+      <h5>Circle Cinema</h5>
+    </a>
+    <p class="text-muted">© 2023</p>
+  </div>
+  <div class="col mb-4">
+  </div>
+
+  <div class="col mb-4">
+    <h5>Naviger</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Forsiden</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lokasjoner</a></li>
+      <li class="nav-item mb-2"><a href="Program.html" class="nav-link p-0 text-muted">Kinoprogram</a></li>
+    </ul>
+  </div>
+
+  <div class="col mb-4">
+    <h5>Info</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">E-post</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Send oss en melding</a></li>
+      <li class="nav-item mb-2"><a href="FAQ.html" class="nav-link p-0 text-muted">FAQ</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Om oss</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

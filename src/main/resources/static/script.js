@@ -1,6 +1,5 @@
 // Kjøres når "Kjøp billet"-knappen trykkes.
 function kjopBilletter() {
-
     // Inputverdier
     let film = $("#filmValg").val();
     let antall = $("#antall").val();
@@ -58,7 +57,7 @@ function kjopBilletter() {
     $("#bekreftelse").css("visibility", "hidden");
 
     // Dersom der er skrevet noe i alle felter blir billetten lagt til bakerst i arrayet, og deretter skrevet ut.
-    if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "" && telefon !== "" && epost !== "") {
+    if (film !== "" && film!== null && antall !== "" && fornavn !== "" && etternavn !== "" && telefon !== "" && epost !== "") {
         // Gjør overskrift til tabellen synlig
         $("#overskrift2").css("visibility", "visible");
         // Sender billetten med input til server, henter tilbake arrayet.

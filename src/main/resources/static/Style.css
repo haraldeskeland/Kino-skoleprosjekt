@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+body {
+    color: #ffeba7;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #030c0e, #0b1a1c, #103131) no-repeat fixed;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    /*
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    */
+}
+
+h5 {
+    color: #0b1a1c;
+}
+
+.navbar, .offcanvas-body, .offcanvas-header {
+    background: #ffeba7;
+}
+
+.offcanvas-title, .nav-item, .nav-link {
+    color: #103131;
+}
+
+img {
+    width: 200px;
+    transition: 0.3s;
+}
+
+img:hover {
+    opacity: 0.7;
+    background-color: #c4ad5b;
+    box-shadow: 0 0 50px 0 rgba(196, 173, 91, 0.30);
+
+}
+
+select, .form-select {
+    width: 400px;
+}
+
+#bekreftelse {
+    color: #46d200;
+}
+
+.feil {
+    color: red;
+}
+
+button, .btn {
+    background: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 30%);
+    font-weight: 700;
+    color: #0D2828FF;
+}
+
+.navbtn {
+    background: #0D2828FF;
+    color: #ffeba7;
+}
+.navbtn:hover {
+    background: #ffeba7;
+    color: #0D2828FF;
+}
+
+button:hover {
+    background-color: #c4ad5b;
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+.bakgrunn {
+    width: 550px;
+    padding: 60px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    background: rgba(7, 6, 6, 0.2);
+    margin-top: 15vh;
+    backdrop-filter: blur( 30px );
+}
+
+.table, .table-striped, tr, th, tbody {
+    color: #ffeba7;
+    margin-bottom: 100px;
+}
+
+.table {
+    --bs-table-hover-color: #ffeba7;
+}
+
+.table-bordered {
+    border-color: rgba(255, 235, 167, 0.1);
+}
+
+.footer {
+    background: #ffeba7;
+}
