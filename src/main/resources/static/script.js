@@ -1,9 +1,6 @@
 // Kjøres når "Kjøp billet"-knappen trykkes.
 function kjopBilletter() {
 
-    // Gjør overskrift til tabellen synlig
-    $("#overskrift2").css("visibility", "visible");
-
     // Inputverdier
     let film = $("#filmValg").val();
     let antall = $("#antall").val();
@@ -33,40 +30,42 @@ function kjopBilletter() {
     // Dersom et felt er tomt, skrives det ut en forklarende tekst til hvert felt.
     // Dersom det ikke er tomt lenger ved kjøring av funksjonen fjernes feilmeldingen.
     if (film === null) {
-        feilFilm.html("<span class='feil'>Du må velge en film.</span>");
+        feilFilm.html("<span class='feil fs-6'>Velg en film.</span>");
     } else {
-        feilFilm.html("<span class='feil'></span>");}
+        feilFilm.html("<span class='feil fs-6 d-inline ml-2'></span>");}
     if (antall === "") {
-        feilAntall.html("<span class='feil'>Du må velge antall billetter.</span>");
+        feilAntall.html("<span class='feil fs-6'>Velg antall billetter.</span>");
     } else {
-        feilAntall.html("<span class='feil'></span>");}
+        feilAntall.html("<span class='feil fs-6'></span>");}
     if (fornavn === "") {
-        feilFornavn.html("<span class='feil'>Du må skrive inn fornavn.</span>");
+        feilFornavn.html("<span class='feil fs-6'>Skriv inn fornavn.</span>");
     } else {
-        feilFornavn.html("<span class='feil'></span>");}
+        feilFornavn.html("<span class='feil fs-6'></span>");}
     if (etternavn === "") {
-        feilEtternavn.html("<span class='feil'>Du må skrive inn etternavn.</span>");
+        feilEtternavn.html("<span class='feil fs-6'>Skriv inn etternavn.</span>");
     } else {
-        feilEtternavn.html("<span class='feil'></span>");}
+        feilEtternavn.html("<span class='feil fs-6'></span>");}
     if (telefon === "") {
-        feilTelefon.html("<span class='feil'>Du må skrive et telfonnummer.</span>");
+        feilTelefon.html("<span class='feil fs-6'>Skriv et telefonnummer.</span>");
     } else {
-        feilTelefon.html("<span class='feil'></span>");}
+        feilTelefon.html("<span class='feil fs-6'></span>");}
     if (epost === "") {
-        feilEpost.html("<span class='feil'>Du må skrive en epost.</span>");
+        feilEpost.html("<span class='feil fs-6'>Skriv en epost.</span>");
     } else {
-        feilEpost.html("<span class='feil'></span>");}
+        feilEpost.html("<span class='feil fs-6'></span>");}
 
     // Skjuler bekreftelse-melding dersom den er synlig
     $("#bekreftelse").css("visibility", "hidden");
 
     // Dersom der er skrevet noe i alle felter blir billetten lagt til bakerst i arrayet, og deretter skrevet ut.
     if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "" && telefon !== "" && epost !== "") {
+        // Gjør overskrift til tabellen synlig
+        $("#overskrift2").css("visibility", "visible");
         // Sender billetten med input til server, henter tilbake arrayet.
         $.post("/lagre", billett, function(billetter) {
         // Lager en tabell som billettene skal være i.
-        let ut = "<table class='table'><tr><th>Film</th><th>Antall Billetter</th><th>Fornavn</th>" +
-                "<th>Etternavn</th><th>Telefon</th><th>E-post</th></tr>";
+        let ut = "<table class='table table-bordered table-hover' id='tabell'><tr><th scope='col'>Film</th><th scope='col'>Antall Billetter</th><th scope='col'>Fornavn</th>" +
+                "<th scope='col'>Etternavn</th><th scope='col'>Telefon</th><th scope='col'>E-post</th></tr>";
         // Kjører gjennom billettRegister (billetter) og henter ut all info som  legges i tabellen.
         for (const billett of billetter) {
                 ut += "<tr><td>" + billett.film + "</td><td>" + billett.antall + "</td><td>" + billett.fornavn + "</td>" +
@@ -103,8 +102,11 @@ function slettBiletter() {
             ut += "</table>";
             $("#utskrift").html(ut);
 
-            // Fjerner bekreftelsesmeldingen
+            // Skjuler overskrift, tabell og bekreftelsesmelding.
             $("#bekreftelse").css("visibility", "hidden");
+            $("#overskrift2").css("visibility", "hidden");
+            $(".table").css("visibility", "hidden");
+
         })
     }
 }

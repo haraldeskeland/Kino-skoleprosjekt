@@ -8,21 +8,22 @@
     <script src="script.js"></script>
 </head>
 <body>
-<!-- Div for å plassere elementer med flex i CSS -->
-    <div class="center">
-        <!-- Pakker inn elementene-->
-        <div class="bakgrunn">
-                <h1>Bestilling av kinobilletter</h1>
+
+<!-- Div som sentrerer med bootstrap -->
+<div class="container d-flex justify-content-center">
+        <!-- Pakker inn elementene i en boks-->
+        <div class="bakgrunn d-flex justify-content.center align-items-center flex-column">
+                <h1 class="font-weight-bold fs-1 text-center">Bestilling av kinobilletter</h1>
 
                 <br>
-
-                <form class="form">
-                    <div class="form-group">
-                        <label for="filmValg"></label>
-                        <label>
-                            <span>Velg film:<span class="feilMelding" id="feilFilm"></span></span>
+                <!-- Justerer størrelse på skjemaet -->
+                <form class="form w-100 d-flex justify-content.center align-items-center flex-column">
+                    <div class="form-group w-75">
+                        <label for="filmValg" class="w-100 mt-1"></label>
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">Velg film:<span id="feilFilm"></span></span>
                             <br>
-                            <select id="filmValg" class="input form-select" name="input">
+                            <select id="filmValg" class="input form-select p-1 mb-2 w-100" name="input">
                                 <option value="" disabled selected>Velg film</option>
                                 <option>Avatar</option>
                                 <option>James Bond</option>
@@ -34,54 +35,61 @@
                         </label>
                         <br>
 
-                        <label>
-                            <span>Antall:<span class="feilMelding" id="feilAntall"></span></span>
-                            <input id="antall" class="input form-control" type="number" placeholder="Antall billetter">
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">Antall:</span><span id="feilAntall"></span>
+                            <input id="antall" class="input form-control mb-2" type="number" placeholder="Antall billetter">
                         </label>
                         <br>
 
-                        <label>
-                            <span>Fornavn:<span class="feilMelding" id="feilFornavn"></span></span>
-                            <input id="fornavn" class="input form-control" type="text" placeholder="Fornavn">
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">Fornavn:<span id="feilFornavn"></span></span>
+                            <input id="fornavn" class="input form-control mb-2" type="text" placeholder="Fornavn">
                         </label>
                         <br>
 
-                        <label>
-                            <span>Etternavn: <span class="feilMelding" id="feilEtternavn"></span></span>
-                            <input id="etternavn" class="input form-control" type="text" placeholder="Etternavn">
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">Etternavn: <span id="feilEtternavn"></span></span>
+                            <input id="etternavn" class="input form-control mb-2" type="text" placeholder="Etternavn">
                         </label>
                         <br>
 
-                        <label>
-                            <span>Telefonnr:<span class="feilMelding" id="feilTelefon"></span></span>
-                            <input id="telefon" class="input form-control" type="text" placeholder="Telefonnumer">
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">Telefonnr:<span id="feilTelefon"></span></span>
+                            <input id="telefon" class="input form-control mb-2" type="text" placeholder="Telefonnumer">
                         </label>
                         <br>
 
-                        <label>
-                            <span>E-post:<span class="feilMelding" id="feilEpost"></span></span>
-                            <input id="epost" class="input form-control" type="text" placeholder="E-post">
+                        <label class="w-100 mt-1">
+                            <span class="fs-5">E-post:<span id="feilEpost"></span></span>
+                            <input id="epost" class="input form-control mb-2" type="text" placeholder="E-post">
                         </label>
                     </div>
                 </form>
 
             <br>
 
-            <button class="btn" id="kjop" onclick="kjopBilletter()">Kjøp billett</button>
-            <button class="btn" id="slett" onclick="slettBiletter()">Slett alle billetter</button>
+            <button class="btn w-75 m-2" id="kjop" onclick="kjopBilletter()">Kjøp billett</button>
+            <button class="btn w-75 m-2" id="slett" onclick="slettBiletter()">Slett alle billetter</button>
 
-            <div id="bekreftelse" style="visibility: hidden">Billetten din er registrert! <br> Sjekk e-posten din for mer informasjon.</div>
+            <div id="bekreftelse" class="text-center mt-3 green-text" style="visibility: hidden">Billetten din er registrert! <br> Sjekk e-posten din for mer informasjon.</div>
         </div>
         <br>
-
-        <h2 id="overskrift2" style="visibility: hidden">Alle billetter:</h2>
-        <div id="utskrift"></div>
+    </div>
+    <div class="container">
+            <h2 id="overskrift2" class="mt-5 mb-5 font-weight-bold fs-2 text-center" style="visibility: hidden">Alle billetter:</h2>
+            <div id="utskrift" class="fs-6 text mt-5"></div>
     </div>
 </body>
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+    body {
+        color: #ffeba7;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(45deg, #030c0e, #0b1a1c, #103131) no-repeat fixed;
+        overflow-x: hidden;
+    }
 
     select, .form-select {
         width: 400px;
@@ -89,82 +97,17 @@
 
     #bekreftelse {
         color: #46d200;
-        text-align: center;
-        margin-top: 20px;
     }
 
     .feil {
         color: red;
-        right: 0;
-    }
-
-    .feilMelding {
-        right: 0;
     }
 
     button, .btn {
-        margin: 10px;
         background: #ffeba7;
         box-shadow: 0 8px 24px 0 rgb(255 235 167 / 30%);
-        width: 75%;
         font-weight: 700;
         color: #0D2828FF;
-    }
-
-    body {
-        color: #ffeba7;
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(45deg, #030c0e, #0b1a1c, #103131) no-repeat fixed;
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
-    .center {
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    h1, h2 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 35px;
-        color: #ffeba7;
-        margin-bottom: -30px;
-        text-align: center;
-        text-shadow: 0 10px 20px #000000;
-    }
-
-    span {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-    }
-
-    .form-select {
-        padding: 10px;
-        width: 100%;
-    }
-
-    .form-group {
-        width: 75%;
-    }
-
-    .form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    label {
-        width: 100%;
-        margin-top: 5px;
     }
 
     button:hover {
@@ -175,12 +118,12 @@
         transform: translateY(3px);
     }
 
+    h1, h2 {
+        text-shadow: 0 10px 20px #000000;
+    }
+
     .bakgrunn {
         width: 550px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
         padding: 60px;
         border-radius: 10px;
         border: 1px solid rgba(0, 0, 0, 0.45);
@@ -189,18 +132,18 @@
         backdrop-filter: blur( 30px );
     }
 
-    #utskrift {
-        font-size: 18px;
-        margin-top: 5vh;
-    }
-
     .table, .table-striped, tr, th, tbody {
         color: #ffeba7;
         margin-bottom: 100px;
     }
 
-    input, select {
-        margin-bottom: 10px;
+    .table {
+        --bs-table-hover-color: #ffeba7;
     }
+
+    .table-bordered {
+        border-color: rgba(255, 235, 167, 0.1);
+    }
+
 </style>
 </html>
