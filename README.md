@@ -7,6 +7,14 @@ Derfor er ikke siden veldig funksjonell her.
 Foreløpig er index.html, FAQ og kinoprogram jobbet med, resten er "pynt".   
 
 Link til nettsiden: https://haraldeskeland.github.io/Kino-skoleprosjekt/  
+
+### Stack:
+* HTML
+* CSS
+* Java
+* Springboot
+* H2 server
+* Bootstrap
   
 Se skjermbilder fra nettsiden her:
 
